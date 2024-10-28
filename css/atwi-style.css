@@ -1,0 +1,58 @@
+section.atwi-int-qa-frame{
+	overflow:hidden;
+}
+
+.atwi-int-qa-idx{
+	 float: left;
+     display: inline;
+	 padding: 0;
+	 margin: 0px 5px 0px 0px;
+}
+
+.atwi-int-q-frame{
+    display: inline;
+	overflow: none;
+	padding: 0;
+}
+
+.atwi-int-a-frame{
+    float: left;
+    clear: left;
+	padding: 0;
+	margin: 20px 0px 30px 0px;
+}
+
+form.settings {
+			width: 1200px;
+			margin: 50px auto;
+			background: #ffffff;
+			padding: 25px;
+			overflow: hidden;
+
+		}
+
+label.settings{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+	color: red;
+}
+input.settings {
+  display: inline-block;
+  float: left;
+}
+
+// Style attributes
+.normal{
+	font-weight:normal;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.justify{
+	text-align: justify;
+}

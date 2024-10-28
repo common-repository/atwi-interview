@@ -1,0 +1,107 @@
+<head>
+	<style>
+		body{
+			background: #f0f0f0;
+		}
+		form {
+			width: 1200px;
+			margin: 50px auto;
+			background: #ffffff;
+			padding: 25px;
+			overflow: hidden;
+		 
+			-moz-border-radius: 20px;
+			-webkit-border-radius: 20px;
+			border-radius: 20px;
+
+		}
+		
+		fieldset {
+			padding: 1em;
+			font:80%/1 sans-serif;
+			border-style: none;
+		}
+		
+		label, input[type="text"], textarea {
+			color: #000000; 
+			float: left;
+			font-family: Verdana, sans-serif; 
+			margin: 10px 0;
+		}
+		label { 
+			display: block; 
+			line-height: 30px; 
+			width: 150px; 
+		}
+		 
+		input[type="text"], textarea { 
+			background: #f0f0f0;
+			border: 1px solid #323232; 
+			color: #000; 
+			height: 30px; 
+			line-height: 30px; 
+			width: 300px; 
+			padding: 0 10px;
+		}
+		 
+		input[type="text"] { padding-left: 30px;}
+		 
+		textarea { 
+			font-size: 12px;
+			height: 180px;
+			width: 1000px;
+			overflow: hidden;
+		}
+		
+		input[type="button"] {
+            color: white;
+            border-radius: 4px;
+			background: rgb(66, 184, 221);
+        }
+        
+	</style>
+	
+	<script type="text/javascript">
+		function insertQABlock()
+		{
+			var qa_idx, qa_q, qa_a, _shortcode;
+			qa_idx = document.getElementById('qa_idx').value;
+			qa_q = document.getElementById('qa_q').value;
+			qa_a = document.getElementById('qa_a').value;
+			
+			//Clear the form
+			document.getElementById('qa_idx').value = "";
+			document.getElementById('qa_q').value = "";
+			document.getElementById('qa_a').value = "";
+			
+			// Compose the content
+			_shortcode = "[interview_id]"+qa_idx+"[/interview_id][interview_q]"+qa_q+"[/interview_q][interview_a]"+qa_a+"[/interview_a]";	
+			// Set the content into parent
+			window.parent.tinyMCE.activeEditor.execCommand( 'mceInsertContent', 0, _shortcode );
+			
+			
+		}
+
+		function closeDialog()
+		{
+			parent.tinyMCE.activeEditor.windowManager.close(window);
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<form name="QAdialog-form" action="">
+					<fieldset >
+						<label for="qa_idx">Index:</label><input type="text" id="qa_idx" name="qa_idx" /> 
+					</fieldset>
+					<fieldset>
+						<label for="qa_q">Question:</label><textarea id="qa_q" name="qa_q"></textarea>
+					</fieldset>
+					<fieldset>
+						<label for="qa_a">Answer:</label><textarea id="qa_a" name="qa_a"></textarea>
+					</fieldset>
+					<input type="button" onclick="insertQABlock()" value="Insert Q&A block"/>
+					<input type="button" onclick="closeDialog()" value="Close"/>
+		</form>
+	</section>
+</body>
